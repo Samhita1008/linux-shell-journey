@@ -1,0 +1,11 @@
+#!/bin/bash
+read -p "enter a directory: " dir
+if [ !-d: "$dir" ]; then
+    echo "Doesnt exist"
+    exit 1
+fi
+echo "Files inside $dir"
+for file in "$dir"/*; do
+    echo "$(basename "$file")"
+done
+
