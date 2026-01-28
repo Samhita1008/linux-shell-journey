@@ -1,0 +1,10 @@
+#!/bin/bash
+rep="$rep.txt"
+>"$rep"
+echo "Finding suid and sgid id files..." >> "$rep"
+echo "Scan time: $(date '+%Y-%m-%d %H:%M:%S')" >> "$rep"
+echo "Suid:" >> "$rep"
+find / -type f -perm -4000 2>/dev/null -exec ls -l{}\; >> "$rep"
+echo "Sgid:" >> "$rep"
+find / -type f -perm -2000 2>/dev/null -exec ls -l{}\; >> "$rep"
+echo "Done Successfullyyy"

@@ -1,0 +1,4 @@
+Finding suid and sgid id files...
+Scan time: 2026-01-28 18:43:06
+Suid:
+Sgid:
