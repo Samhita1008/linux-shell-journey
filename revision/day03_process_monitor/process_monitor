@@ -1,0 +1,37 @@
+#!/bin/bash
+while true
+do
+    echo "-----PROCESS MONITOR-----"
+    echo "1. Show all processes"
+    echo "2. Show top processes"
+    echo "3. Search process"
+    echo "4. Kill process"
+    echo "5. Exit"
+
+    read -p "Enter choice: " choice
+
+    case $choice in
+    1)
+        ps aux
+        ;;
+    2)
+        top
+        ;;
+    3)
+        read -p "Enter Process name to search: " pname
+        ps aux | grep $pname
+        ;;
+    4)
+        read -p "Enter PID to search and kill: " pid
+        kill $pid
+        ;;
+    5)
+        echo "Byee!"
+        break
+        ;;
+    *)
+        echo "Invalid choice!"
+        ;;
+    esac
+done
+        
