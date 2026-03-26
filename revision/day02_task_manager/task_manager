@@ -1,0 +1,31 @@
+#!/bin/bash
+while true
+do
+    echo "-----TASK MANAGER-----"
+    echo "1. Add task"
+    echo "2. View task"
+    echo "3. Delete task"
+    echo "4. Exit"
+
+    read -p "Enter choice: " choice
+
+    case $choice in
+    1)
+        read -p "Enter task" task
+        echo $task >> task.txt
+        ;;
+    2)
+        cat task.txt
+        ;;
+    3)
+        sed -i "/$task/d" task.txt
+        ;;
+    4)
+        echo "Byee!"
+        break
+        ;;
+    *)
+        echo "Invalid option"
+        ;;
+    esac
+done
